@@ -98,8 +98,8 @@ export const CreativeExperiments: React.FC = () => {
                 </svg>
 
                 {/* Interactive Frequency Slider */}
-                <div className="mt-3 pt-3 border-t border-[#222222] flex items-center justify-between gap-4 font-mono text-xs">
-                  <span className="text-[#888888]">Harmonic Frequency:</span>
+                <div className="mt-3 pt-3 border-t border-[#222222] flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 sm:gap-4 font-mono text-xs">
+                  <span className="text-[#888888] text-[11px] sm:text-xs">Harmonic Frequency:</span>
                   <input
                     type="range"
                     min="1"
@@ -110,9 +110,9 @@ export const CreativeExperiments: React.FC = () => {
                       soundFx.playClick();
                       setWaveFrequency(parseFloat(e.target.value));
                     }}
-                    className="accent-[#FFFFFF] w-40 cursor-pointer"
+                    className="accent-[#FFFFFF] w-28 sm:w-40 cursor-pointer"
                   />
-                  <span className="text-[#FFFFFF] font-bold">{waveFrequency}x</span>
+                  <span className="text-[#FFFFFF] font-bold text-xs">{waveFrequency}x</span>
                 </div>
               </div>
 

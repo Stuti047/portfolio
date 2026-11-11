@@ -36,7 +36,7 @@ export const Education: React.FC = () => {
             return (
               <div
                 key={item.institution}
-                className="manga-card rounded-2xl p-6 sm:p-8 bg-[#FFFFFF] transition-all duration-200"
+                className="manga-card rounded-2xl p-4 sm:p-8 bg-[#FFFFFF] transition-all duration-200"
               >
                 {hasImage ? (
                   /* Photograph + Details Layout (Desktop: Beside details; Mobile: Stacked above) */

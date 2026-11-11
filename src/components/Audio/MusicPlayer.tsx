@@ -128,10 +128,10 @@ export const MusicPlayer: React.FC = () => {
       </audio>
 
       {/* Floating Music Control Pill */}
-      <div className="fixed bottom-5 left-5 z-40 select-none">
+      <div className="fixed bottom-4 left-4 sm:bottom-5 sm:left-5 z-40 select-none">
         <div
           onClick={togglePlay}
-          className={`flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[#FFFFFF] border-[1.5px] border-[#111111] shadow-[3px_3px_0px_0px_#111111] cursor-pointer transition-all duration-200 hover:translate-y-[-2px] ${
+          className={`flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-[#FFFFFF] border-[1.5px] border-[#111111] shadow-[3px_3px_0px_0px_#111111] cursor-pointer transition-all duration-200 hover:translate-y-[-2px] ${
             isPlaying ? 'ring-2 ring-[#111111]/10' : 'opacity-85 hover:opacity-100'
           }`}
           title={isPlaying ? 'Pause Background Music' : 'Play Background Music (Lo-Fi Ambient)'}

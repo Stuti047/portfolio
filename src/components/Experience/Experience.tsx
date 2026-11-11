@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MiniRobotMascot, StarCreature } from '../Mascots/DoodleCreatures';
-import { Calendar, Building2, BookOpen } from 'lucide-react';
+import { Calendar, Building2, BookOpen, Sparkles } from 'lucide-react';
 
 export const Experience: React.FC = () => {
+  // Mobile tap-to-color interaction state
+  const [isColorActive, setIsColorActive] = useState<boolean>(false);
+
   return (
     <section id="research" className="py-24 relative bg-[#FFFFFF] border-t border-[#E5E5E5] overflow-hidden">
       {/* Anchor alias for #experience */}
@@ -24,26 +27,54 @@ export const Experience: React.FC = () => {
           </p>
         </div>
 
-        {/* Minimal Editorial Research Card with Photograph & Details */}
+        {/* Minimal Editorial Research Card with Interactive Grayscale-to-Color Photograph */}
         <div className="manga-card rounded-2xl p-6 sm:p-9 bg-[#FFFFFF] relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Photograph Column (Desktop: Beside text; Mobile: Above text) */}
             <div className="lg:col-span-5 w-full">
-              <div className="relative rounded-xl border border-[#111111] overflow-hidden bg-[#FAFAFA] shadow-[3px_3px_0px_0px_#111111] group">
+              <div 
+                className="relative rounded-xl border border-[#111111] overflow-hidden bg-[#FAFAFA] shadow-[3px_3px_0px_0px_#111111] group cursor-pointer"
+                onClick={() => setIsColorActive(!isColorActive)}
+                title="Hover or Tap to view original full color"
+              >
                 {/* Photo Header Bar */}
                 <div className="px-3.5 py-1.5 bg-[#FFFFFF] border-b border-[#E5E5E5] flex items-center justify-between text-[11px] font-mono text-[#777777]">
-                  <span className="font-bold text-[#111111]">CAMPUS ARCHIVE</span>
-                  <span className="text-[10px] uppercase text-[#888888]">ABV-IIITM GWALIOR</span>
+                  <span className="font-bold text-[#111111] flex items-center gap-1.5">
+                    <span>CAMPUS ARCHIVE</span>
+                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] uppercase text-[#888888] hidden sm:inline">ABV-IIITM GWALIOR</span>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsColorActive(!isColorActive);
+                      }}
+                      className="text-[9px] font-mono px-1.5 py-0.5 rounded border border-[#111111] bg-[#F7F7F7] text-[#111111] font-bold hover:bg-[#111111] hover:text-[#FFFFFF] transition-colors"
+                    >
+                      {isColorActive ? 'COLOR: ON' : 'TAP FOR COLOR'}
+                    </button>
+                  </div>
                 </div>
 
-                {/* Image preserving natural colours with subtle hover */}
-                <div className="overflow-hidden bg-[#F2F2F2]">
+                {/* Interactive Grayscale to Full Natural Color with 500ms smooth transition */}
+                <div className="overflow-hidden bg-[#F2F2F2] relative">
                   <img
                     src={`${import.meta.env.BASE_URL}images/iiitm-research.jpg`}
                     alt="Stuti Jain at ABV-IIITM Gwalior"
-                    className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    className={`w-full h-auto object-cover transition-all duration-500 ease-in-out ${
+                      isColorActive
+                        ? 'grayscale-0 contrast-100 scale-[1.02]'
+                        : 'grayscale contrast-105 md:group-hover:grayscale-0 md:group-hover:contrast-100 md:group-hover:scale-[1.02]'
+                    }`}
                     loading="lazy"
                   />
+
+                  {/* Subtle visual badge cue */}
+                  <div className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-[#FFFFFF]/90 border border-[#111111] text-[9px] font-mono text-[#111111] backdrop-blur-sm pointer-events-none flex items-center gap-1">
+                    <Sparkles size={9} />
+                    <span>{isColorActive ? 'Natural Color' : 'Hover/Tap for Color'}</span>
+                  </div>
                 </div>
 
                 {/* Photo Caption */}

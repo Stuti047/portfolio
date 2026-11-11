@@ -107,7 +107,7 @@ export const Hobbies: React.FC = () => {
         </div>
 
         {/* Illustrated Scrapbook Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16">
           {hobbies.map((hobby, index) => {
             const Icon = hobby.icon;
 
@@ -115,7 +115,7 @@ export const Hobbies: React.FC = () => {
               <div
                 key={hobby.id}
                 onClick={() => soundFx.playPop()}
-                className="manga-card rounded-2xl p-6 bg-[#FFFFFF] flex flex-col justify-between group cursor-pointer transition-all duration-200"
+                className="manga-card rounded-2xl p-5 sm:p-6 bg-[#FFFFFF] flex flex-col justify-between group cursor-pointer transition-all duration-200"
               >
                 <div>
                   {/* Top Scrapbook Header */}
@@ -154,7 +154,7 @@ export const Hobbies: React.FC = () => {
         </div>
 
         {/* Still Exploring... Bottom Scrapbook Showcase */}
-        <div className="manga-card rounded-2xl p-8 sm:p-12 bg-[#F7F7F7] text-center max-w-3xl mx-auto relative overflow-hidden">
+        <div className="manga-card rounded-2xl p-6 sm:p-12 bg-[#F7F7F7] text-center max-w-3xl mx-auto relative overflow-hidden">
           <div className="absolute top-4 left-6 hidden sm:block opacity-60">
             <StarCreature size={36} />
           </div>

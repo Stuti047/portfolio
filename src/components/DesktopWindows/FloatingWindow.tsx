@@ -29,28 +29,28 @@ export const FloatingWindow: React.FC<FloatingWindowProps> = ({
     <div
       className={`editorial-window rounded-xl overflow-hidden transition-all duration-200 z-30 ${
         isMaximized 
-          ? 'fixed inset-6 z-50' 
+          ? 'fixed inset-3 sm:inset-6 z-50' 
           : isMinimized 
-            ? 'h-10 w-72' 
+            ? 'h-10 w-64 sm:w-72' 
             : 'w-full'
       } ${className}`}
     >
       {/* Title Bar (Minimal Editorial Monochrome) */}
       <div 
-        className="flex items-center justify-between px-3.5 py-2.5 bg-[#FFFFFF] border-b border-[#111111] select-none"
+        className="flex items-center justify-between px-3 sm:px-3.5 py-2.5 bg-[#FFFFFF] border-b border-[#111111] select-none"
       >
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-[#111111] font-mono">{icon}</span>
-          <span className="font-mono text-xs font-bold text-[#111111] tracking-wider uppercase">
+        <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+          <span className="text-xs text-[#111111] font-mono shrink-0">{icon}</span>
+          <span className="font-mono text-xs font-bold text-[#111111] tracking-wider uppercase truncate">
             {title}
           </span>
-          <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-[#EFEFEF] text-[#555555] border border-[#E5E5E5] hidden sm:inline-block">
+          <span className="text-[9px] sm:text-[10px] font-mono px-1.5 py-0.2 rounded bg-[#EFEFEF] text-[#555555] border border-[#E5E5E5] hidden sm:inline-block shrink-0">
             ACTIVE
           </span>
         </div>
 
         {/* Minimal Window Controls */}
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0 ml-2">
           <button
             onClick={() => {
               soundFx.playClick();

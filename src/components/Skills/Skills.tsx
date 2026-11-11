@@ -83,7 +83,7 @@ export const Skills: React.FC = () => {
                     key={skill.id}
                     onClick={() => handleSkillClick(skill)}
                     onMouseEnter={() => setMascotReaction(skill.mascotReaction)}
-                    className={`p-4 rounded-xl cursor-pointer select-none transition-all duration-150 relative overflow-hidden group ${
+                    className={`p-3 sm:p-4 rounded-xl cursor-pointer select-none transition-all duration-150 relative overflow-hidden group ${
                       isSelected
                         ? 'bg-[#FFFFFF] border-[1.5px] border-[#111111] shadow-manga-sm translate-x-0.5 translate-y-0.5'
                         : 'bg-[#FFFFFF] border border-[#E5E5E5] hover:border-[#111111] hover:bg-[#FAFAFA]'
@@ -127,7 +127,7 @@ export const Skills: React.FC = () => {
           {/* Right Column: Reactive Anime Mascot & Active Node Inspector */}
           <div className="lg:col-span-4 flex flex-col items-center">
             {/* Mascot Container */}
-            <div className="w-full p-6 rounded-2xl bg-[#FFFFFF] border-[1.5px] border-[#111111] shadow-manga flex flex-col items-center mb-6">
+            <div className="w-full p-4 sm:p-6 rounded-2xl bg-[#FFFFFF] border-[1.5px] border-[#111111] shadow-manga flex flex-col items-center mb-6">
               <span className="font-mono text-[11px] text-[#111111] font-bold mb-2 uppercase tracking-wider">
                 MASCOT STATE: {mascotReaction.toUpperCase()}
               </span>

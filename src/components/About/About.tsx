@@ -23,10 +23,10 @@ export const About: React.FC = () => {
         </div>
 
         {/* Content Layout: Manga Illustration + Conversational Story */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left Column: Authentic Profile Card */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative p-6 rounded-2xl bg-[#FFFFFF] border-[1.5px] border-[#111111] shadow-manga flex flex-col items-center w-full max-w-sm group">
+            <div className="relative p-4 sm:p-6 rounded-2xl bg-[#FFFFFF] border-[1.5px] border-[#111111] shadow-manga flex flex-col items-center w-full max-w-sm group">
               {/* Halftone dot pattern background */}
               <div className="absolute inset-0 bg-halftone-manga opacity-30 rounded-2xl pointer-events-none" />
 
@@ -50,7 +50,7 @@ export const About: React.FC = () => {
               </div>
 
               {/* Status info */}
-              <div className="mt-4 pt-3 border-t border-[#E5E5E5] flex items-center justify-between w-full font-mono text-[11px] text-[#777777] relative z-10">
+              <div className="mt-4 pt-3 border-t border-[#E5E5E5] flex items-center justify-between w-full font-mono text-[10px] sm:text-[11px] text-[#777777] relative z-10">
                 <span>MITS GWALIOR</span>
                 <span className="font-bold text-[#111111]">MATH & COMPUTING</span>
               </div>
@@ -60,26 +60,26 @@ export const About: React.FC = () => {
           {/* Right Column: Conversational About Description & Currently Exploring */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             {/* Main Conversational Narrative Card */}
-            <div className="manga-card rounded-2xl p-6 sm:p-8 space-y-4">
+            <div className="manga-card rounded-2xl p-5 sm:p-8 space-y-3.5 sm:space-y-4">
               <p className="text-base sm:text-lg text-[#111111] font-semibold leading-relaxed">
                 Hey! I'm <span className="underline decoration-2">Stuti Jain</span>, a Mathematics and Computing undergraduate at Madhav Institute of Technology and Science, Gwalior.
               </p>
 
-              <p className="text-sm sm:text-base text-[#444444] leading-relaxed">
+              <p className="text-xs sm:text-base text-[#444444] leading-relaxed">
                 I'm someone who loves exploring, experimenting, and learning new things. My interests extend beyond programming into mathematics, graphic design, creative software, research, and technology.
               </p>
 
-              <p className="text-sm sm:text-base text-[#444444] leading-relaxed">
+              <p className="text-xs sm:text-base text-[#444444] leading-relaxed">
                 I enjoy turning ideas into projects, experimenting with unfamiliar tools, sketching, creating graphics, redesigning layouts, and even refining documents until everything looks just right.
               </p>
 
-              <p className="text-sm sm:text-base text-[#111111] font-medium leading-relaxed pt-1 border-t border-[#E5E5E5]">
+              <p className="text-xs sm:text-base text-[#111111] font-medium leading-relaxed pt-1 border-t border-[#E5E5E5]">
                 I'm still exploring my interests, trying new things, and discovering where my curiosity takes me.
               </p>
             </div>
 
             {/* "Currently Exploring" Highlight Block */}
-            <div className="p-5 rounded-2xl bg-[#F7F7F7] border-[1.5px] border-[#111111] shadow-manga-sm">
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#F7F7F7] border-[1.5px] border-[#111111] shadow-manga-sm">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2 font-mono text-xs font-bold text-[#111111]">
                   <Compass size={15} />
@@ -88,23 +88,23 @@ export const About: React.FC = () => {
                 <span className="font-handwritten text-xs text-[#555555]">~ in progress ~</span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                <div className="p-2.5 bg-[#FFFFFF] rounded-xl border border-[#E5E5E5] text-center hover:border-[#111111] transition-colors">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
+                <div className="p-2 sm:p-2.5 bg-[#FFFFFF] rounded-xl border border-[#E5E5E5] text-center hover:border-[#111111] transition-colors">
                   <span className="text-xs font-mono font-bold text-[#111111] block">TouchDesigner</span>
                   <span className="text-[10px] text-[#777777]">Generative Visuals</span>
                 </div>
 
-                <div className="p-2.5 bg-[#FFFFFF] rounded-xl border border-[#E5E5E5] text-center hover:border-[#111111] transition-colors">
+                <div className="p-2 sm:p-2.5 bg-[#FFFFFF] rounded-xl border border-[#E5E5E5] text-center hover:border-[#111111] transition-colors">
                   <span className="text-xs font-mono font-bold text-[#111111] block">Document Design</span>
                   <span className="text-[10px] text-[#777777]">Typography & Grid</span>
                 </div>
 
-                <div className="p-2.5 bg-[#FFFFFF] rounded-xl border border-[#E5E5E5] text-center hover:border-[#111111] transition-colors">
+                <div className="p-2 sm:p-2.5 bg-[#FFFFFF] rounded-xl border border-[#E5E5E5] text-center hover:border-[#111111] transition-colors">
                   <span className="text-xs font-mono font-bold text-[#111111] block">Creative Code</span>
                   <span className="text-[10px] text-[#777777]">Visual Experiments</span>
                 </div>
 
-                <div className="p-2.5 bg-[#FFFFFF] rounded-xl border border-[#E5E5E5] text-center hover:border-[#111111] transition-colors">
+                <div className="p-2 sm:p-2.5 bg-[#FFFFFF] rounded-xl border border-[#E5E5E5] text-center hover:border-[#111111] transition-colors">
                   <span className="text-xs font-mono font-bold text-[#111111] block">Applied Math</span>
                   <span className="text-[10px] text-[#777777]">Problem Solving</span>
                 </div>
@@ -112,12 +112,12 @@ export const About: React.FC = () => {
             </div>
 
             {/* Creative Software Floating Badges */}
-            <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#555555]">
-              <span className="font-bold text-[#111111] flex items-center gap-1">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 font-mono text-xs text-[#555555]">
+              <span className="font-bold text-[#111111] flex items-center gap-1 text-[11px] sm:text-xs">
                 <Palette size={13} /> Tools in rotation:
               </span>
               {['TouchDesigner', 'Figma', 'Canva', 'VS Code', 'Python', 'DaVinci Resolve', 'C++'].map((t) => (
-                <span key={t} className="px-2.5 py-0.5 rounded-full bg-[#FAFAFA] border border-[#E5E5E5] text-[#111111] text-[11px]">
+                <span key={t} className="px-2 sm:px-2.5 py-0.5 rounded-full bg-[#FAFAFA] border border-[#E5E5E5] text-[#111111] text-[10px] sm:text-[11px]">
                   {t}
                 </span>
               ))}

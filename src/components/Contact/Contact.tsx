@@ -62,10 +62,10 @@ export const Contact: React.FC = () => {
           {/* Left Column: Direct Links & Waving Mascot */}
           <div className="lg:col-span-5 flex flex-col items-center">
             {/* Waving Mascot Box */}
-            <div className="p-6 rounded-2xl bg-[#FFFFFF] border-[1.5px] border-[#111111] shadow-manga flex flex-col items-center w-full max-w-sm mb-6">
+            <div className="p-4 sm:p-6 rounded-2xl bg-[#FFFFFF] border-[1.5px] border-[#111111] shadow-manga flex flex-col items-center w-full max-w-sm mb-6">
               <AnimeGirlMascot
                 pose="waving"
-                size={230}
+                size={220}
                 interactive={true}
                 speechBubble="Looking forward to connecting!"
               />
@@ -145,7 +145,7 @@ export const Contact: React.FC = () => {
 
           {/* Right Column: Minimalist Contact Form */}
           <div className="lg:col-span-7">
-            <div className="editorial-window rounded-2xl p-6 sm:p-8 bg-[#FFFFFF]">
+            <div className="editorial-window rounded-2xl p-5 sm:p-8 bg-[#FFFFFF]">
               <div className="flex items-center justify-between border-b border-[#E5E5E5] pb-4 mb-6">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#111111]" />

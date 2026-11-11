@@ -117,12 +117,12 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Right side controls: Email, LinkedIn, GitHub, Sound Toggle */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2">
           {/* Email Mailto Link */}
           <a
             href={emailUrl}
             onClick={() => soundFx.playClick()}
-            className="w-8 h-8 rounded-lg border border-[#E5E5E5] flex items-center justify-center text-[#111111] hover:bg-[#111111] hover:text-[#FFFFFF] transition-all"
+            className="hidden sm:flex w-8 h-8 rounded-lg border border-[#E5E5E5] items-center justify-center text-[#111111] hover:bg-[#111111] hover:text-[#FFFFFF] transition-all"
             title="Email Stuti (jainstuti2007@gmail.com)"
             aria-label="Send email"
           >
@@ -135,7 +135,7 @@ export const Navbar: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => soundFx.playClick()}
-            className="w-8 h-8 rounded-lg border border-[#E5E5E5] flex items-center justify-center text-[#111111] hover:bg-[#111111] hover:text-[#FFFFFF] transition-all"
+            className="hidden sm:flex w-8 h-8 rounded-lg border border-[#E5E5E5] items-center justify-center text-[#111111] hover:bg-[#111111] hover:text-[#FFFFFF] transition-all"
             title="LinkedIn profile"
             aria-label="LinkedIn"
           >
@@ -150,7 +150,7 @@ export const Navbar: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => soundFx.playClick()}
-            className="w-8 h-8 rounded-lg border border-[#E5E5E5] flex items-center justify-center text-[#111111] hover:bg-[#111111] hover:text-[#FFFFFF] transition-all"
+            className="hidden sm:flex w-8 h-8 rounded-lg border border-[#E5E5E5] items-center justify-center text-[#111111] hover:bg-[#111111] hover:text-[#FFFFFF] transition-all"
             title="GitHub profile"
             aria-label="GitHub"
           >
@@ -177,44 +177,61 @@ export const Navbar: React.FC = () => {
               soundFx.playClick();
               setMobileMenuOpen(!mobileMenuOpen);
             }}
-            className="md:hidden w-8 h-8 rounded-lg border border-[#E5E5E5] flex items-center justify-center text-[#111111]"
+            className="md:hidden w-8 h-8 rounded-lg border border-[#111111] bg-[#FAFAFA] flex items-center justify-center text-[#111111] hover:bg-[#111111] hover:text-[#FFFFFF] transition-all"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            {mobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (Clean dropdown navigation) */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#FFFFFF] border-b border-[#E5E5E5] px-6 py-6 animate-in slide-in-from-top-2 duration-150">
-          <div className="flex flex-col gap-3">
-            {navLinks.map((item) => (
-              <a
-                key={item.id}
-                href={item.href}
-                onClick={(e) => handleLinkClick(e, item.href, item.id)}
-                className="font-mono text-xs py-2 px-3 rounded text-[#111111] hover:bg-[#F7F7F7] flex items-center justify-between border-l-2 border-transparent hover:border-[#111111]"
-              >
-                <span>{item.label}</span>
-                <span className="text-[#888888]">→</span>
-              </a>
-            ))}
+        <div className="md:hidden bg-[#FFFFFF]/98 backdrop-blur-md border-b border-[#111111] px-5 py-5 shadow-lg animate-in slide-in-from-top-2 duration-200">
+          <div className="flex flex-col gap-2">
+            <div className="pb-2 border-b border-[#E5E5E5] flex items-center justify-between">
+              <span className="font-mono text-[10px] text-[#777777] uppercase tracking-wider">
+                NAVIGATION INDEX
+              </span>
+              <span className="font-mono text-[10px] text-[#111111] font-bold">
+                STUTI JAIN
+              </span>
+            </div>
 
-            <div className="pt-4 mt-2 border-t border-[#E5E5E5] flex items-center justify-between">
-              <span className="font-mono text-[11px] text-[#777777]">B.Tech Math & Computing</span>
-              <div className="flex items-center gap-3">
+            {navLinks.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={(e) => handleLinkClick(e, item.href, item.id)}
+                  className={`font-mono text-xs py-2.5 px-3 rounded-lg flex items-center justify-between transition-colors ${
+                    isActive
+                      ? 'bg-[#111111] text-[#FFFFFF] font-bold'
+                      : 'text-[#111111] hover:bg-[#F7F7F7] border border-transparent hover:border-[#E5E5E5]'
+                  }`}
+                >
+                  <span className="tracking-wider">{item.label}</span>
+                  <span className={isActive ? 'text-[#FFFFFF]' : 'text-[#888888]'}>→</span>
+                </a>
+              );
+            })}
+
+            <div className="pt-4 mt-2 border-t border-[#E5E5E5] flex flex-col gap-3">
+              <div className="grid grid-cols-3 gap-2">
                 <a
                   href={emailUrl}
-                  className="font-mono text-xs text-[#111111] underline"
+                  onClick={() => soundFx.playClick()}
+                  className="py-2 px-2 text-center rounded border border-[#E5E5E5] bg-[#FAFAFA] hover:bg-[#111111] hover:text-[#FFFFFF] font-mono text-[11px] font-semibold text-[#111111] transition-colors"
                 >
-                  Email
+                  ✉ Email
                 </a>
                 <a
                   href={linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs text-[#111111] underline"
+                  onClick={() => soundFx.playClick()}
+                  className="py-2 px-2 text-center rounded border border-[#E5E5E5] bg-[#FAFAFA] hover:bg-[#111111] hover:text-[#FFFFFF] font-mono text-[11px] font-semibold text-[#111111] transition-colors"
                 >
                   LinkedIn
                 </a>
@@ -222,11 +239,15 @@ export const Navbar: React.FC = () => {
                   href={githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs text-[#111111] underline"
+                  onClick={() => soundFx.playClick()}
+                  className="py-2 px-2 text-center rounded border border-[#E5E5E5] bg-[#FAFAFA] hover:bg-[#111111] hover:text-[#FFFFFF] font-mono text-[11px] font-semibold text-[#111111] transition-colors"
                 >
                   GitHub
                 </a>
               </div>
+              <p className="font-handwritten text-xs text-center text-[#777777]">
+                ~ B.Tech Mathematics & Computing • MITS Gwalior ~
+              </p>
             </div>
           </div>
         </div>

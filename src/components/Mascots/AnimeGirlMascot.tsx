@@ -303,15 +303,19 @@ export const AnimeGirlMascot: React.FC<AnimeGirlMascotProps> = ({
 
   return (
     <div 
-      className={`relative inline-block select-none group cursor-pointer transition-transform duration-200 hover:scale-[1.02] ${className}`}
+      className={`relative inline-block select-none group cursor-pointer transition-transform duration-200 hover:scale-[1.02] max-w-full ${className}`}
       onClick={handleClick}
       title={interactive ? 'Click to change pose & cheer!' : 'Stuti\'s Illustrated Mascot'}
     >
-      {/* Speech Bubble in Minimal Manga Style */}
+      {/* Speech Bubble in Minimal Manga Style (Safely constrained within viewport) */}
       {speechBubble && (
-        <div className="absolute -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#FFFFFF] border-[1.5px] border-[#111111] text-[#111111] text-xs font-mono py-1 px-3 rounded-lg shadow-manga-sm z-20 animate-bounce-subtle">
-          <span className="mr-1">✦</span> {speechBubble}
+        <div className="absolute -top-12 sm:-top-14 left-1/2 -translate-x-1/2 w-max max-w-[calc(100vw-48px)] sm:max-w-xs bg-[#FFFFFF] border-[1.5px] border-[#111111] text-[#111111] text-[11px] sm:text-xs font-mono py-1 px-2.5 sm:px-3 rounded-lg shadow-manga-sm z-20 animate-bounce-subtle pointer-events-none text-center">
+          <span className="inline-flex items-center gap-1.5 flex-wrap justify-center">
+            <span className="text-[#111111] shrink-0">✦</span>
+            <span className="leading-tight">{speechBubble}</span>
+          </span>
           <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[7px] border-t-[#111111]" />
+          <div className="absolute -bottom-[5px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[6px] border-t-[#FFFFFF]" />
         </div>
       )}
 
@@ -329,7 +333,8 @@ export const AnimeGirlMascot: React.FC<AnimeGirlMascotProps> = ({
         viewBox="0 0 340 390"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.06)]"
+        className="filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.06)] max-w-full h-auto"
+        style={{ maxHeight: `${size * 1.15}px` }}
       >
         <defs>
           {/* Halftone Pattern for Manga Shading */}

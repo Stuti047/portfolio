@@ -45,7 +45,7 @@ export const Projects: React.FC = () => {
             return (
               <div
                 key={project.id}
-                className="manga-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden bg-[#FFFFFF]"
+                className="manga-card rounded-2xl p-5 sm:p-8 flex flex-col justify-between group relative overflow-hidden bg-[#FFFFFF]"
               >
                 {/* Background Number Watermark */}
                 <div className="absolute top-2 right-4 font-mono font-black text-6xl text-[#111111]/[0.04] select-none pointer-events-none">
