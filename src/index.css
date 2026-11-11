@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #FFFFFF;
+    --bg-secondary: #F7F7F7;
+    --text-primary: #111111;
+    --text-secondary: #555555;
+    --border-color: #E5E5E5;
+    --border-dark: #111111;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+  }
+
+  section[id] {
+    scroll-margin-top: 90px;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  /* Minimal Monochrome Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAFAFA;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #111111;
+  }
+}
+
+/* Minimal Japanese Editorial Grid & Halftone Texture */
+.bg-minimal-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+.bg-halftone-manga {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 0);
+  background-size: 8px 8px;
+}
+
+.bg-halftone-dense {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.18) 1.2px, transparent 0);
+  background-size: 6px 6px;
+}
+
+/* Japanese Manga Panel Card */
+.manga-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid #111111;
+  box-shadow: 3px 3px 0px #111111;
+  transition: all 0.2s ease-in-out;
+}
+
+.manga-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #111111;
+}
+
+/* Subtle Editorial Border Panel */
+.editorial-panel {
+  border: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editorial-panel:hover {
+  border-color: #111111;
+}
+
+/* Minimal Floating Window */
+.editorial-window {
+  background: #FFFFFF;
+  border: 1.5px solid #111111;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.9);
+}
+
+/* Hand-drawn ink underline */
+.doodle-underline-ink {
+  position: relative;
+  display: inline-block;
+}
+.doodle-underline-ink::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='6' viewBox='0 0 100 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 3.5C25 1.5 65 5 98 2.5' stroke='%23111111' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 80px 4px;
+}
+
+/* Subtle hand-drawn circle border */
+.doodle-circle {
+  border: 1.5px dashed #111111;
+}
