@@ -7,7 +7,7 @@ export const educationData: EducationItem[] = [
     institution: 'Madhav Institute of Technology and Science, Gwalior',
     period: 'August 2025 – Expected August 2029',
     badge: 'Undergraduate Program',
-    image: '/images/mits-campus.jpg',
+    image: `${import.meta.env.BASE_URL}images/mits-campus.jpg`,
     imageAlt: 'Madhav Institute of Technology and Science Gwalior Campus',
     caption: 'My University',
     highlights: [
@@ -35,7 +35,7 @@ export const educationData: EducationItem[] = [
     period: 'Completed 2023',
     score: '86.6%',
     badge: 'Secondary Examination',
-    image: '/images/jnv-campus.jpg',
+    image: `${import.meta.env.BASE_URL}images/jnv-campus.jpg`,
     imageAlt: 'Jawahar Navodaya Vidyalaya Campus',
     caption: 'CBSE — 86.6%',
     highlights: [

@@ -34,7 +34,7 @@ export const About: React.FC = () => {
               <div className="relative z-10 my-2 w-full">
                 <div className="relative aspect-square w-full rounded-xl overflow-hidden border border-[#111111] shadow-[3px_3px_0px_0px_#111111] bg-[#FAFAFA]">
                   <img
-                    src="/images/stuti-profile.jpg"
+                    src={`${import.meta.env.BASE_URL}images/stuti-profile.jpg`}
                     alt="Stuti Jain"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     loading="eager"

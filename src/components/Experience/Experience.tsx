@@ -39,7 +39,7 @@ export const Experience: React.FC = () => {
                 {/* Image preserving natural colours with subtle hover */}
                 <div className="overflow-hidden bg-[#F2F2F2]">
                   <img
-                    src="/images/iiitm-research.jpg"
+                    src={`${import.meta.env.BASE_URL}images/iiitm-research.jpg`}
                     alt="Stuti Jain at ABV-IIITM Gwalior"
                     className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     loading="lazy"

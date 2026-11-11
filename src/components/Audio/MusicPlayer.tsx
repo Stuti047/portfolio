@@ -123,8 +123,8 @@ export const MusicPlayer: React.FC = () => {
         preload="auto"
         onEnded={() => setIsPlaying(false)}
       >
-        <source src="/audio/ambient-lofi.m4a" type="audio/mp4" />
-        <source src="/audio/ambient-lofi.wav" type="audio/wav" />
+        <source src={`${import.meta.env.BASE_URL}audio/ambient-lofi.m4a`} type="audio/mp4" />
+        <source src={`${import.meta.env.BASE_URL}audio/ambient-lofi.wav`} type="audio/wav" />
       </audio>
 
       {/* Floating Music Control Pill */}
